@@ -3,11 +3,9 @@ from databases import Database
 
 from app.services.product_service import ProductService 
 
-product_service = ProductService()
-
-
 router = APIRouter(prefix="/api/products", tags=["products"])
 
+product_service = ProductService()
 
 @router.get("/")
 async def read_products():

@@ -1,9 +1,10 @@
-from app.repositories.repository import AbstractRepository
 from app.data_access.models import Test
+from app.repositories.sql_client import sql_client
 
 
-class ProductRepository(AbstractRepository):
-    def __init__(self, session):
+
+class ProductRepository():
+    def __init__(self, session=sql_client.get_session()):
         self.__session = session
 
     def list(self):
