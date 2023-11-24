@@ -31,16 +31,12 @@ async def insert_data(database):
     
     
     product_data = [
-        {"name": f"{random.choice(car_models)} 2000", "price": 29.99, "model": "ModelA", "category": "Category1", "stock": 50, "image": "image1.jpg"},
-        {"name": f"{random.choice(car_models)} 2005", "price": 49.99, "model": "ModelB", "category": "Category2", "stock": 30, "image": "image2.jpg"},
-        {"name": f"{random.choice(car_models)} 2010", "price": 39.99, "model": "ModelC", "category": "Category1", "stock": 20, "image": "image3.jpg"},
-        {"name": f"{random.choice(car_models)} 2015", "price": 19.99, "model": "ModelA", "category": "Category3", "stock": 10, "image": "image4.jpg"},
-        {"name": f"{random.choice(car_models)} 2020", "price": 59.99, "model": "ModelB", "category": "Category2", "stock": 40, "image": "image5.jpg"},
-        {"name": f"{random.choice(car_models)} 2021", "price": 34.99, "model": "ModelC", "category": "Category1", "stock": 15, "image": "image6.jpg"},
-        {"name": f"{random.choice(car_models)} 2018", "price": 24.99, "model": "ModelA", "category": "Category3", "stock": 25, "image": "image7.jpg"},
-        {"name": f"{random.choice(car_models)} 2019", "price": 44.99, "model": "ModelB", "category": "Category2", "stock": 35, "image": "image8.jpg"},
-        {"name": f"{random.choice(car_models)} 2022", "price": 54.99, "model": "ModelC", "category": "Category1", "stock": 45, "image": "image9.jpg"},
-        {"name": f"{random.choice(car_models)} 2017", "price": 29.99, "model": "ModelA", "category": "Category3", "stock": 50, "image": "image10.jpg"},
+        {"name": f"{random.choice(car_models)} 2000", "price": 29.99, "model": "ModelA", "category": "Category1", "stock": 50, "image": "https://i.ytimg.com/vi/cirv76TF04A/maxresdefault.jpg"},
+        {"name": f"{random.choice(car_models)} 2005", "price": 49.99, "model": "ModelB", "category": "Category2", "stock": 30, "image": "https://i.ytimg.com/vi/cirv76TF04A/maxresdefault.jpg"},
+        {"name": f"{random.choice(car_models)} 2010", "price": 39.99, "model": "ModelC", "category": "Category1", "stock": 20, "image": "https://i.ytimg.com/vi/cirv76TF04A/maxresdefault.jpg"},
+        {"name": f"{random.choice(car_models)} 2015", "price": 19.99, "model": "ModelA", "category": "Category3", "stock": 10, "image": "https://i.ytimg.com/vi/cirv76TF04A/maxresdefault.jpg"},
+        {"name": f"{random.choice(car_models)} 2020", "price": 59.99, "model": "ModelB", "category": "Category2", "stock": 40, "image": "https://i.ytimg.com/vi/cirv76TF04A/maxresdefault.jpg"},
+        {"name": f"{random.choice(car_models)} 2021", "price": 34.99, "model": "ModelC", "category": "Category1", "stock": 15, "image": "https://i.ytimg.com/vi/cirv76TF04A/maxresdefault.jpg"},
     ]
     
     await database.execute_many(query=query, values=product_data)
