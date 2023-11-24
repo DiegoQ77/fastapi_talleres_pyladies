@@ -35,3 +35,39 @@ class ProductRepository():
         except Exception as e:
             raise 
         
+        
+from fastapi import APIRouter, HTTPException
+from databases import Database
+
+from app.services.product_service import ProductService 
+from app.domain.models import ProductInput
+
+router = APIRouter(prefix="/api/products", tags=["products"])
+
+@router.get("/")
+async def read_products():
+    products = product_service.get_products()
+    return products
+
+
+
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from databases import Database
+
+class SQLClient:
+    def __init__(self):
+        try:
+            engine = create_engine("sqlite:///pyladies.db", echo=True)
+            self.__session = sessionmaker(
+                autocommit=False, autoflush=False, bind=engine)
+        except Exception as e:
+            raise
+
+    
+    def get_session(self):
+        return self.__session()
+
+
+sql_client = SQLClient()
